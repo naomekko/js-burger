@@ -1,43 +1,110 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>WCB Cafe</title>
-        <meta name="description" content="ブレンドコーヒーとヘルシーなオーガニックフードを提供するカフェ">
-        <link rel="icon" type="image/png" href="images/favicon.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta charset="utf-8">
+    <title>WCB Cafe</title>
+    <meta name="description" content="ブレンドコーヒーとヘルシーなオーガニックフードを提供するカフェ">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSS -->
-        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/burger.css" rel="stylesheet">
+</head>
 
-    <body>
-        <div id="home" class="big-bg">
-            <header class="page-header wrapper">
-                <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="WCBカフェ ホーム"></a></h1>
-                <nav id="navi">
-                    <ul class="main-nav">
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-                <!-- ハンバーガーのボタン -->
-                <ul id="burger">
-                    <li id="line1" class="line"></li>
-                    <li id="line2" class="line"></li>
-                    <li id="line3" class="line"></li>
+<body>
+    <div id="home" class="big-bg">
+        <header class="page-header wrapper">
+            <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="WCBカフェ ホーム"></a></h1>
+            <nav id="navi" class="">
+                <ul class="main-nav">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
-            </header>
+            </nav>
+            <!-- ハンバーガーのボタン -->
+            <ul id="burger">
+                <li id="line1" class="line"></li>
+                <li id="line2" class="line"></li>
+                <li id="line3" class="line"></li>
+            </ul>
 
-            <div class="home-content wrapper">
-                <h2 class="page-title">We'll Make Your Day</h2>
-                <p>おしゃれなカフェで癒やされてみませんか？無添加の食材で体の中からリフレッシュ。</p>
-                <a class="button" href="menu.html">メニューを見る</a>
-            </div><!-- /.home-content -->
-        </div><!-- /#home -->
-        <script src="js/burger.js"></script>
-    </body>
+        </header>
+
+        <div class="home-content wrapper">
+            <h2 class="page-title">We'll Make Your Day</h2>
+            <p>おしゃれなカフェで癒やされてみませんか？無添加の食材で体の中からリフレッシュ。</p>
+            <a class="button" href="menu.html">メニューを見る</a>
+        </div><!-- /.home-content -->
+    </div><!-- /#home -->
+    <div class="slider">
+        <div class="slider01"><a href=""><img src="images/menu1.jpg" alt=""></a></div>
+        <div class="slider02"><a href=""><img src="images/menu2.jpg" alt=""></a></div>
+        <div class="slider03">
+            <a href="">
+                <img src="images/menu3.jpg" alt="">
+                <div class="mask">
+                    <span class="text">美味しそうなデザート</span>
+                </div>
+            </a>
+        </div>
+        <div class="slider04">
+            <a href="">
+                <img src="images/menu4.jpg" alt="">
+                <div class="mask">
+                    <span class="text">美味しそうなスープ</span>
+                </div>
+            </a>
+        </div>
+        <div class="slider05"><a href=""><img src="images/menu5.jpg" alt=""></a></div>
+        <div class="slider06"><a href=""><img src="images/menu6.jpg" alt=""></a></div>
+        <div class="slider07"><a href=""><img src="images/menu7.jpg" alt=""></a></div>
+        <div class="slider08"><a href=""><img src="images/menu8.jpg" alt=""></a></div>
+        <div class="slider09"><a href=""><img src="images/menu9.jpg" alt=""></a></div>
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script>
+        $('.slider').slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            centerMode: true,
+            responsive: [
+                {
+                    breakpoint: 600,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    </script>
+    <script src="js/burger.js"></script>
+
+</body>
+
 </html>
