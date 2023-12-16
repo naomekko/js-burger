@@ -26,6 +26,10 @@ img {
     padding: 0 4%;
 }
 
+ul {
+    list-style: none;
+}
+
 /* スライダーCSS */
 .slick-prev:before,
 .slick-next:before {
@@ -222,6 +226,97 @@ img {
     }
 }
 
+/* スクロールイベント */
+#child p,
+#child img,
+#child .item {
+    opacity: 0;
+}
+
+.inview {
+    animation-name: left-anime;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    transition: all ease-in;
+
+}
+
+@keyframes left-anime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+
+    }
+}
+
+/* アコーディオン */
+#acordion-area {
+    padding: 30px 0 100px;
+}
+
+#acordion-area .sub-title {
+    margin-bottom: 30px;
+    padding: 5px;
+    text-align: center;
+}
+
+.qa__head {
+    display: block;
+    background-color: #0bd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    text-align-last: left;
+}
+
+.qa__head:after {
+    content: "";
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    transform: rotate(-135deg) translateY(9px);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    /* 追記 */
+    transition: transform .4s;
+}
+
+
+.qa__body {
+    padding: 25px 20px 30px;
+    border: transparent;
+    /*borderを非表示の状態にする*/
+    padding: 0 20px;
+    /*上下のpaddingを0に書き換える*/
+    line-height: 0;
+    /* 非表示時、0*/
+    opacity: 0;
+    /* 非表示時、0*/
+    /* 追記 */
+    transition: line-height 0.4s, padding 0.4s, opacity 0.4s;
+}
+
+.qa__body.is-open {
+    padding: 20px;
+    line-height: 1.5;
+    opacity: 1;
+}
+
+.qa__head.is-open::after {
+    transform: rotate(45deg) translateY(-10px);
+}
+
+.qa__item:not(:first-child) {
+    margin-top: 16px;
+}
 
 /* 大きな背景画像 */
 .big-bg {

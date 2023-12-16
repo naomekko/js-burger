@@ -73,6 +73,54 @@
         <div class="slider08"><a href=""><img src="images/menu8.jpg" alt=""></a></div>
         <div class="slider09"><a href=""><img src="images/menu9.jpg" alt=""></a></div>
     </div>
+    <div id="acordion-area">
+        <div class="wrapper">
+            <h3 class="sub-title">よくある質問</h3>
+
+            <div class="qa">
+                <ul class="qa__block">
+                    <li class="qa__item">
+                        <button class="qa__head js-ac">テキストテキストテキストテキスト</button>
+                        <div class="qa__body">
+                            <p>
+                                テキストテキストテキストテキスト
+                            </p>
+                        </div>
+                    </li>
+                    <li class="qa__item">
+                        <button class="qa__head js-ac">テキストテキストテキストテキスト</button>
+                        <div class="qa__body">
+                            <p>
+                                テキストテキストテキストテキスト
+                            </p>
+                        </div>
+                    </li>
+                    <li class="qa__item">
+                        <button class="qa__head js-ac">テキストテキストテキストテキスト</button>
+                        <div class="qa__body">
+                            <p>
+                                テキストテキストテキストテキスト
+                            </p>
+                        </div>
+                    </li>
+                    <li class="qa__item">
+                        <button class="qa__head js-ac">テキストテキストテキストテキスト</button>
+                        <div class="qa__body">
+                            <p>
+                                テキストテキストテキストテキスト
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="wrapper">
+            <p><small>&copy; 2019 Manabox</small></p>
+        </div>
+    </footer>
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -110,7 +158,19 @@
     </script>
     <script src="js/logo.js"></script>
     <script src="js/burger.js"></script>
+    <script>
+        const qa = document.querySelectorAll(".js-ac"); // js-ac要素すべて取得
+        function acToggle() { // クリック時に出現するclass名の指定とクリック毎にclassの追加と削除の切り替えさせる設定
+            const content = this.nextElementSibling; // thisはこのjsの書き方の場合最初の行で取得した.js-acを指すため、.js-acが書かれている要素の次の要素（隣）
+            content.classList.toggle("is-open");// クリック毎に.is-openの追加と削除を行う（toggleで設定）
+            const qa = this;// thisはこのjsの書き方の場合最初の行で取得した.js-acを指す
+            qa.classList.toggle('is-open');// js-ac要素にis-openクリック毎に追加と削除を行う（toggleで設定）
+        }
 
+        for (let i = 0; i < qa.length; i++) { // ループ文で処理を繰り返しを行う。.js-acのclassが複数指定された場合その数分繰り返し処理を行う。qa.lengthは.js-acの数をを取得してその数文繰り返しを行う
+            qa[i].addEventListener("click", acToggle);//クリックすると、acToggleを実行するという設定。本来は、記述された数分の.addEventListenerの処理が必要だが、ループ文の処理のお陰で自動的に処理されている
+        }    
+    </script>
 </body>
 
 </html>
